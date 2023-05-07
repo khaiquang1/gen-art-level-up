@@ -28,8 +28,8 @@ const outputJPEG = false; // if false, the generator outputs png's
 const startIndex = 0;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 1000,
+  height: 1000,
   smoothing: true, // set to false when up-scaling pixel art.
 };
 
@@ -41,40 +41,24 @@ const background = {
 const layerConfigurations = [
   {
     growEditionSizeTo: 10,
-    namePrefix: "Series 2", // Use to add a name to Metadata `name:`
+    namePrefix: "test many options",
     layersOrder: [
       { name: "Background" },
-      {
-        name: "Back Accessory",
-        // options: {
-        //   bypassDNA: true,
-        // },
-      },
-      { name: "Head" },
-      { name: "Clothes" },
       { name: "Eyes" },
-      { name: "Hair" },
-      { name: "Accessory" },
-      { name: "Shirt Accessories" },
+      { name: "Mouth" },
+      { name: "Eyes" },
+      { name: "Mouth" },
+      // { name: "Eyes Red", trait: "Eyes" },
+      // { name: "Mouth Red", trait: "Mouth" },
     ],
   },
-  // {
-  //   growEditionSizeTo: 10,
-  //   namePrefix: "Lion",
-  //   resetNameIndex: true, // this will start the Lion count at #1 instead of #6
-  //   layersOrder: [
-  //     { name: "Background" },
-  //     { name: "Hats" },
-  //     { name: "Male Hair" },
-  //   ],
-  // },
 ];
 
 /**
  * Set to true for when using multiple layersOrder configuration
  * and you would like to shuffle all the artwork together
  */
-const shuffleLayerConfigurations = false;
+const shuffleLayerConfigurations = true;
 
 const debugLogs = true;
 
@@ -96,6 +80,9 @@ const incompatible = {
   //   Red: ["Dark Long"],
   //   // directory incompatible with directory example
   //   White: ["rare-Pink-Pompadour"],
+  Green: ["Red", "Yellow"],
+  Red: ["Green", "Yellow"],
+  Yellow: ["Red", "Green"],
 };
 
 /**
@@ -117,8 +104,8 @@ const forcedCombinations = {
  * clean-filename: trait-value override pairs. Wrap filenames with spaces in quotes.
  */
 const traitValueOverrides = {
-  Helmet: "Space Helmet",
-  "gold chain": "GOLDEN NECKLACE",
+  // Helmet: "Space Helmet",
+  // "gold chain": "GOLDEN NECKLACE",
 };
 
 const extraMetadata = {};
@@ -163,8 +150,8 @@ const uniqueDnaTorrance = 10000;
 const useRootTraitType = true;
 
 const preview = {
-  thumbPerRow: 5,
-  thumbWidth: 50,
+  thumbPerRow: 7,
+  thumbWidth: 300,
   imageRatio: format.width / format.height,
   imageName: "preview.png",
 };
